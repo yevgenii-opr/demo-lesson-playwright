@@ -34,7 +34,7 @@ test('login with correct credentials and verify order creation page', async ({})
   // verify at least few elements on the order creation page
 })
 
-test.only('login and create order', async ({}) => {
+test('login and create order', async ({}) => {
   const orderCreationPage = await loginPage.signIn(USERNAME, PASSWORD)
 
   await orderCreationPage.usernameInput.fill('random-user')
