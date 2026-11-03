@@ -58,13 +58,13 @@ test('check errors on order creation', async ({}) => {
   await expect(orderCreationPage.createOrderButton).toBeDisabled()
 })
 
-test('logout button from order page', async ({}) => {
+test.only('logout button from order page', async ({}) => {
   const orderCreationPage = await loginPage.signIn(USERNAME, PASSWORD)
 
   await orderCreationPage.logoutButton.click()
 
   await expect(loginPage.signInButton).toBeVisible()
-  //await expect(orderCreationPage.logoutButton).toBeHidden()
+  await expect(orderCreationPage.logoutButton).toBeHidden()
   expect(loginPage.page.url()).toContain('/signin')
 })
 
